@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "mongodb-memory-server": "^8.0.0",
+    "supertest": "^6.3.0"
+  },
+  "dependencies": {
+    "@zxing/browser": "^0.1.5",
+    "react-qr-barcode-scanner": "^2.1.8"
+  }
+}
