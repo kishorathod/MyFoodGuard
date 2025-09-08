@@ -4,9 +4,12 @@ import FoodItem from './models/FoodItem.js';
 import dotenv from 'dotenv';
 dotenv.config();
 
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/foodguard';
+const MONGO_URI = process.env.MONGO_URI;
 
 async function patchFoodItems() {
+  if (!MONGO_URI) {
+    throw new Error('MONGO_URI is not set. Cannot run patch script without a valid MongoDB URI.');
+  }
   await mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
   const items = await FoodItem.find({});
   let updatedCount = 0;
