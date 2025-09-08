@@ -40,7 +40,7 @@ export default function Navbar() {
     setLoadingNotifications(true);
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:5000/api/notifications", {
+      const response = await fetch("/api/notifications", {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (response.status === 401) {

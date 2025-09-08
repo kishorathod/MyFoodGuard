@@ -39,7 +39,7 @@ export default function Register() {
     setIsLoading(true);
     
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/register", {
+      const res = await axios.post("/api/auth/register", {
         name: form.name,
         email: form.email,
         password: form.password,
@@ -65,7 +65,7 @@ export default function Register() {
   };
 
   const handleGoogleLogin = () => {
-    window.location.href = "http://localhost:5000/api/auth/google";
+    window.location.href = "/api/auth/google";
   };
 
   return (

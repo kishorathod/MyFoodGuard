@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "https://myfoodguard.onrender.com/api/$1" },
+    { "source": "/health", "destination": "https://myfoodguard.onrender.com/health" }
+  ]
+}
+
+

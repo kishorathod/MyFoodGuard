@@ -94,7 +94,7 @@ export default function Dashboard() {
         return;
       }
 
-      const response = await fetch("http://localhost:5000/api/food", {
+      const response = await fetch("/api/food", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -136,7 +136,7 @@ export default function Dashboard() {
   const addItem = async (itemData) => {
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:5000/api/food", {
+      const response = await fetch("/api/food", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -167,7 +167,7 @@ export default function Dashboard() {
   const updateItem = async (id, itemData) => {
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch(`http://localhost:5000/api/food/${id}`, {
+      const response = await fetch(`/api/food/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -202,7 +202,7 @@ export default function Dashboard() {
     }
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch(`http://localhost:5000/api/food/${id}`, {
+      const response = await fetch(`/api/food/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -316,7 +316,7 @@ export default function Dashboard() {
   const fetchNotifications = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:5000/api/notifications", {
+      const response = await fetch("/api/notifications", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
